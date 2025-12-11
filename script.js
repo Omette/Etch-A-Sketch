@@ -57,14 +57,14 @@ function colorCell(cell, color) {
 function fadeCell(cell) {
     let computedStyle = window.getComputedStyle(cell);
     let currentColor = computedStyle.backgroundColor;
-    cell.style.backgroundColor = `rgba(from ${currentColor} r g b / calc(alpha - 0.1))`; 
+    cell.style.backgroundColor = `rgba(from ${currentColor} r g b / clamp(0, calc(alpha - 0.1), 1))`; 
     console.log(cell.style.backgroundColor);
 }
 
 function darkenCell(cell) {
     let computedStyle = window.getComputedStyle(cell);
     let currentColor = computedStyle.backgroundColor;
-    cell.style.backgroundColor = `hsl(from ${currentColor} h s calc(l - 5) / alpha)`; 
+    cell.style.backgroundColor = `hsl(from ${currentColor} h s clamp(0, calc(l - 5), 100) / alpha)`; 
     console.log(cell.style.backgroundColor);
 }
 
