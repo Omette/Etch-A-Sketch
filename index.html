@@ -11,15 +11,30 @@
     <div class="controls">
         <div>
             <label for="gridSize">Grid size:</label>
-            <input type="range" name="gridSize" id="gridSize" min="1" max="100" value="16" oninput="updateGrid(this, this.value)">
+            <input type="range" name="gridSize" id="gridSize" min="1" max="100" value="16" oninput="updateGrid(this, this.value)"/>
             <output>16</output>
         </div>
 
         <div>
             <label for="colorPicker">Color options:</label>
-            <input type="color" name="colorPicker" id="colorPicker" value="#000000">
+            <input type="color" name="colorPicker" id="colorPicker" value="#000000" alpha />
+            <label for="canvasColor">Canvas color:</label>
+            <input type="color" name="canvasColor" id="canvasColor" value="#ffffff"/>
             <label for="rainbowMode">Rainbow Mode:</label>
-            <input type="checkbox" name="rainbowMode" id="rainbowMode">
+            <input type="checkbox" name="rainbowMode" id="rainbowMode"/>
+            <label for="eraserMode">Eraser Mode:</label>
+            <input type="checkbox" name="eraserMode" id="eraserMode"/>
+
+            <label for="darkenMode">Darken:</label>
+            <input type="checkbox" name="darkenMode" id="darkenMode"/>
+
+            <label for="fadeMode">Reduce Opacity:</label>
+            <input type="checkbox" name="fadeMode" id="fadeMode"/>
+
+            <label for="hideGrid">Hide Grid</label>
+            <input type="checkbox" name="hideGrid" id="hideGrid"/>
+
+            <button id="clearGrid">Clear Canvas</button>
         </div>
         
 
