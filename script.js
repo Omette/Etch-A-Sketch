@@ -7,7 +7,14 @@ function generateGrid(size) {
             cell.classList.add('cell');
             cell.draggable = false;
             cell.addEventListener('mouseover', (e) => {
-                e.target.style.backgroundColor = 'black';
+                if (options.rainbowMode) {
+                    colorCellRandomly(e.target);
+                } else if (options.eraserMode) {
+                    colorCell(e.target, 'white');
+                } else {
+                    console.log(options.color);
+                    colorCell(e.target, options.color);
+                }
             });
             row.draggable = false;
             row.appendChild(cell);
@@ -30,8 +37,40 @@ function updateGrid(slider, newSize) {
     generateGrid(newSize);
 }
 
+function colorCellRandomly(cell) {
+    const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
+    cell.style.backgroundColor = randomColor;
+}
+
+function colorCell(cell, color) {
+    cell.style.backgroundColor = color;
+}
+
+function getColorSelectorValue() {
+    const colorSelector = document.getElementById('colorPicker');
+    options.color = colorSelector.value;
+}
 
 
-//const size = getSizeInput();
-generateGrid(20);
+function initialize() {
+    //Default options
+    options = {
+        color: 'black',
+        rainbowMode: false,
+        eraserMode: false
+    };
 
+    const colorSelector = document.getElementById('colorPicker');
+    colorSelector.addEventListener('input', getColorSelectorValue);
+
+    const rainbowButton = document.getElementById('rainbowMode');
+    rainbowButton.addEventListener('click', () => {
+        options.rainbowMode = !options.rainbowMode;
+    });
+
+
+    const slider = document.getElementById('gridSize');
+    generateGrid(slider.value);
+}
+
+initialize();
