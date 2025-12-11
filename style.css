@@ -8,22 +8,52 @@ body {
     background-color: #4A3267;
     color: #DE638A;
     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
 input[type='checkbox'] {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    transition: scale 0.2s ease;
+}
+
+input[type='checkbox']:hover {
+    scale: 1.2;
 }
 
 input[type='checkbox']:checked {
     accent-color: #4A3267;
 }
 
+input[type='color'] {
+    background-color: transparent;
+    width: 40px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
 h1 {
     margin: 10px;
     font-size: 3rem;
     color: #F3D9E5;
+}
+
+button {
+    font-size: 1.5rem;
+    margin: 10px 0px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: #DE638A;
+    color: #F3D9E5;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #C25578;
 }
 
 .controls {
