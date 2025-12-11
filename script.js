@@ -92,6 +92,10 @@ function draw(e) {
         else if (options.darkenMode) {
             darkenCell(e.target);
         }
+
+        else if (options.fadeMode) {
+            fadeCell(e.target);
+        }
         
         else {
             console.log(options.color);
