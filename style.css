@@ -1,0 +1,23 @@
+.gridContainer {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 1000px;
+    background-color: grey;
+}
+
+.row {
+    flex: 1;
+    flex-basis: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: greenyellow;
+}
+
+.cell {
+    flex: 1;
+    flex-basis: 1;
+    border: 1px solid black;
+    background-color: white;
+}

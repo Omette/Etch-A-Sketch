@@ -7,6 +7,7 @@ function generateGrid(size) {
             cell.classList.add('cell');
             row.appendChild(cell);
         }
+        row.classList.add('row');
         container.appendChild(row);
     }
     
